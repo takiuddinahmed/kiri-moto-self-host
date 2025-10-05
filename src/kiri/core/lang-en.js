@@ -1,1 +1,1 @@
-../../../web/kiri/lang/en.js
+../../../web/slicer/lang/en.js

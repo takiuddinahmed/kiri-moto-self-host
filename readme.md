@@ -108,7 +108,7 @@ services:
 
 ## For any default install...
 
-Then open a browser to [localhost:8080/kiri](http://localhost:8080/kiri)
+Then open a browser to [localhost:8080/slicer](http://localhost:8080/slicer)
 
 # Windows Developers
 

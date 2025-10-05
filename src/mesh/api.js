@@ -1511,7 +1511,7 @@ const api = {
     },
 
     kirimoto() {
-        window.location = "/kiri";
+        window.location = "/slicer";
     },
 
     clear() {

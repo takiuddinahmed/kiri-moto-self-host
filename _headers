@@ -6,6 +6,9 @@
   Cross-Origin-Resource-Policy: same-site
   X-Content-Type-Options: nosniff
 
+/slicer/*
+  Cache-Control: public, max-age=600
+
 /kiri/*
   Cache-Control: public, max-age=600
 

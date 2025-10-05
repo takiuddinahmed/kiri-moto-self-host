@@ -44,7 +44,7 @@ function createWindow() {
         }
     });
 
-    mainWindow.loadURL('http://localhost:5309/kiri');
+    mainWindow.loadURL('http://localhost:5309/slicer');
 
     // default normal url navigation or page opens to happen outside Electron
     mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -56,6 +56,9 @@ function createWindow() {
     // prevent "other" urls from opening inside Electron (alerts are problematic)
     mainWindow.webContents.on('will-navigate', (event, url) => {
         // console.log('DIVERT', url);
+        if (url.endsWith('/slicer') || url.endsWith('/slicer/')) {
+            return;
+        }
         if (url.endsWith('/kiri')  || url.endsWith('/kiri/')) {
             return;
         }

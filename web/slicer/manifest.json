@@ -1,9 +1,9 @@
 {
-    "name": "Kiri:Moto 4.3.2",
-    "short_name": "Kiri:Moto",
+    "name": "Techno Slicer",
+    "short_name": "Techno Slicer",
     "description": "Slicer for 3D printers, CNC mills, laser cutters and more",
-    "start_url": "/kiri/",
-    "id": "/kiri/",
+    "start_url": "/slicer/",
+    "id": "/slicer/",
     "display": "standalone",
     "theme_color": "#7e99b7",
     "background_color": "#ffffff",

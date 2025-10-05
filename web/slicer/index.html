@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Stewart Allen">
+    <meta name="author" content="Md Takiuddin Ahmed">
     <meta name="keywords" content="3d slicer,chromebook,slicer,3d slicing,cnc,cam,toolpaths,toolpath generation,kiri,kirimoto,kiri:moto,gcode,cura,simplify 3d,prusaslicer,fdm,sla">
-    <meta name="copyright" content="stewart allen [sa@grid.space]">
+    <meta name="copyright" content="Md Takiuddin Ahmed [contact@takiuddin.me]">
     <meta name="description" content="Browser-based 3D slicer, gcode and CNC toolpath generator">
     <meta property="og:description" content="Kiri:Moto is a unique 3D slicer that runs entirely in browser and creates output for your favorite maker tools: 3D Printers, CNC Mills and Laser Cutters.">
     <meta property="og:title" content="Browser-based 3D Slicer">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://grid.space/kiri/">
-    <meta property="og:image" content="https://static.grid.space/img/logo_km_og.png">
+    <meta property="og:url" content="https://slicer.techowren.com">
+    <meta property="og:image" content="https://slicer.techowren.com/img/logo_km_og.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta http-equiv="origin-trial" content="AobHyD9RXtmfFOTcY506ANNJjG8lYuuvQ3/C7YJvprSP6Kk2pjKIBSKAUbUh64Nx6aCZaqlZ+7sSSswiIFHflgYAAAB0eyJvcmlnaW4iOiJodHRwczovL2dyaWQuc3BhY2U6NDQzIiwiZmVhdHVyZSI6IlVucmVzdHJpY3RlZFNoYXJlZEFycmF5QnVmZmVyIiwiZXhwaXJ5IjoxNzY5NDcyMDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Kiri:Moto</title>
+    <title>Techno Slicer</title>
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon-mobile.png">
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -31,7 +31,7 @@
 <body>
 <div id="app" class="f-col">
     <!-- hide page contents and provide loading message during initialization -->
-    <div id="curtain" class="j-center a-center"><img id="loading">Kiri:Moto is Loading</div>
+    <div id="curtain" class="j-center a-center"><img id="loading">Techno Slicer is Loading</div>
 
     <!-- when running iframed, provide a separator between the menu bar and enclosing page -->
     <div id="top-sep"></div>
@@ -63,7 +63,7 @@
         <div class="grow"></div>
         <div id="app-name" class="f-col a-center top-menu">
             <span class="grow">
-                <span id="app-name-text" class="km-font">Kiri:Moto</span>
+                <span id="app-name-text" class="km-font">Techno Slicer</span>
                 <div id="app-name-pop" class="top-menu-drop top-menu-center">
                     <div class="content">
                         <div id="app-help">
@@ -479,17 +479,17 @@
         <!-- help menu -->
         <div id="mod-help" class="mdialog f-col">
             <div class="f-row j-center title">
-                <label>Kiri:Moto Help</label>
+                <label>Techno Slicer Help</label>
             </div>
             <hr width="100%">
             <div class="f-col">
-                <a target="_rsc" href="https://docs.grid.space/projects/kiri-moto"><i class="fas fa-question-circle"></i>Documentation & APIs</a>
-                <a target="_rsc" href="https://forum.grid.space"><i class="fab fa-discourse"></i> Discourse Forums</a>
-                <a target="_rsc" href="https://discord.gg/suyCCgr"><i class="fab fa-discord"></i> Discord Server</a>
-                <a target="_rsc" href="https://github.com/gridspace/grid-apps/issues"><i class="fas fa-bug"></i> Bug Reports</a>
-                <a target="_rsc" href="https://github.com/gridspace/grid-apps/releases"><i class="fab fa-github"></i> Releases & Binaries</a>
+                <a target="_rsc" href="https://github.com/takiuddinahmed/kiri-moto-self-host"><i class="fas fa-question-circle"></i>Documentation & APIs</a>
+                <a target="_rsc" href="https://github.com/takiuddinahmed/kiri-moto-self-host"><i class="fab fa-discourse"></i> Discourse Forums</a>
+                <a target="_rsc" href="https://github.com/takiuddinahmed/kiri-moto-self-host"><i class="fab fa-discord"></i> Discord Server</a>
+                <a target="_rsc" href="https://github.com/takiuddinahmed/kiri-moto-self-host/issues"><i class="fas fa-bug"></i> Bug Reports</a>
+                <a target="_rsc" href="https://github.com/takiuddinahmed/kiri-moto-self-host/releases"><i class="fab fa-github"></i> Releases & Binaries</a>
                 <a target="_rsc" onclick="kiri.api.modal.show('don8')"><i class="fa-solid fa-sack-dollar"></i> Support Development</a>
-                <a href="https://youtu.be/08795Sj22QE" target="youtube"><i class="fab fa-youtube"></i>Video Guide (from v2.5)</a>
+                <a href="https://takiuddin.me" target="website"><i class="fab fa-website"></i>Contact</a>
             </div>
             <hr width="100%">
             <div class="f-row j-center">
@@ -677,7 +677,7 @@
                     </div>
                     <button id="print-gridhost">send</button>
                 </div>
-                <div><label class="hint">setup <a href="https://github.com/GridSpace/grid-host" target="_help">grid:host</a> for your network</label></div>
+                <div><label class="hint">setup <a href="https://github.com/takiuddinahmed/kiri-moto-self-host" target="_help">grid:host</a> for your network</label></div>
             </div>
             <div id="send-to-gridhead" class="header noshow"><label>grid:local</label></div>
             <div id="send-to-gridspool" class="f-row box noshow">

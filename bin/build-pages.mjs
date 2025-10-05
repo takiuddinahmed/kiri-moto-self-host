@@ -72,10 +72,16 @@ async function buildStaticBundle() {
         })
     );
 
-    // redirect naked domain to /kiri/
+    // redirect naked domain to /slicer/
     await fs.writeFile(
         path.join(outDir, 'index.html'),
-        '<!doctype html><meta http-equiv="refresh" content="0;url=/kiri/">Redirecting…\n'
+        '<!doctype html><meta http-equiv="refresh" content="0;url=/slicer/">Redirecting…\n'
+    );
+
+    // redirect legacy /kiri paths to /slicer counterparts for static hosting
+    await fs.writeFile(
+        path.join(outDir, '_redirects'),
+        '/kiri/* /slicer/:splat 301\n/kiri /slicer 301\n'
     );
 
     // replicate wasm assets where in-browser paths expect them
@@ -84,7 +90,7 @@ async function buildStaticBundle() {
         path.join(outDir, 'wasm'),
         path.join(outDir, 'lib', 'wasm'),
         path.join(outDir, 'lib', 'kiri', 'wasm'),
-        path.join(outDir, 'kiri', 'wasm'),
+        path.join(outDir, 'slicer', 'wasm'),
     ];
     if (await fs.pathExists(wasmSource)) {
         for (const target of wasmTargets) {

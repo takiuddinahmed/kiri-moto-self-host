@@ -47,6 +47,14 @@ let { CAM, SLA, FDM, LASER, DRAG, WJET, WEDM } = MODES,
     ui = api.ui,
     uc = api.uc;
 
+const APP_PATH_BASE = (() => {
+    const match = WIN.location.pathname.match(/\/(slicer|kiri)(?=\/|$)/);
+    if (match) {
+        return `/${match[1]}/`;
+    }
+    return '/slicer/';
+})();
+
 function settings() {
     return api.conf.get();
 }
@@ -1582,7 +1590,7 @@ function init_two() {
 
     // load CSS extensions
     if (SETUP.ss) SETUP.ss.forEach(function(style) {
-        style = style.charAt(0) === '/' ? style : `/kiri/style-${style}`;
+        style = style.charAt(0) === '/' ? style : `${APP_PATH_BASE}style-${style}`;
         let ss = DOC.createElement('link');
         ss.setAttribute("type", "text/css");
         ss.setAttribute("rel", "stylesheet");
@@ -1815,9 +1823,15 @@ function init_two() {
 
     // hide url params but preserve version root (when present)
     let wlp = WIN.location.pathname;
-    let kio = wlp.indexOf('/kiri/');
+    let kio = wlp.indexOf(APP_PATH_BASE);
+    let keepLen = APP_PATH_BASE.length;
+    if (kio < 0 && APP_PATH_BASE.endsWith('/')) {
+        const baseNoSlash = APP_PATH_BASE.slice(0, -1);
+        kio = wlp.indexOf(baseNoSlash);
+        keepLen = baseNoSlash.length;
+    }
     if (kio >= 0) {
-        history.replaceState({}, '', wlp.substring(0,kio + 6));
+        history.replaceState({}, '', wlp.substring(0, kio + keepLen));
     }
 
     // lift curtain
@@ -1859,7 +1873,7 @@ function init_lang() {
         let map = api.language.map(lang);
         let scr = DOC.createElement('script');
         // scr.setAttribute('defer',true);
-        scr.setAttribute('src',`/kiri/lang/${map}.js?${version}`);
+        scr.setAttribute('src',`${APP_PATH_BASE}lang/${map}.js?${version}`);
         (DOC.body || DOC.head).appendChild(scr);
         stats.set('ll',lang);
         scr.onload = function() {

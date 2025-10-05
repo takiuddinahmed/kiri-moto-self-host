@@ -16,7 +16,7 @@ const version = license.version || "rogue";
 const netdb = require('@gridspace/net-level-client');
 const PATH = require('path');
 
-const append = { mesh:'', kiri:'' };
+const append = { mesh:'', slicer:'', kiri:'' };
 const code = {};
 const mods = {};
 const load = [];
@@ -122,12 +122,14 @@ function init(mod) {
     mod.add(serveWasm);
     mod.add(serveCode);
     mod.add(fullpath({
-        "/kiri"            : redir((pre??"") + "/kiri/", 301),
+        "/slicer"          : redir((pre??"") + "/slicer/", 301),
         "/mesh"            : redir((pre??"") + "/mesh/", 301),
         "/meta"            : redir((pre??"") + "/meta/", 301),
-        "/kiri/index.html" : redir((pre??"") + "/kiri/", 301),
+        "/slicer/index.html" : redir((pre??"") + "/slicer/", 301),
         "/mesh/index.html" : redir((pre??"") + "/mesh/", 301),
-        "/meta/index.html" : redir((pre??"") + "/meta/", 301)
+        "/meta/index.html" : redir((pre??"") + "/meta/", 301),
+        "/kiri"            : redir((pre??"") + "/slicer/", 301),
+        "/kiri/index.html" : redir((pre??"") + "/slicer/", 301)
     }));
     mod.add(handleVersion);
     mod.add(fixedmap("/api/", api));
@@ -146,7 +148,8 @@ function init(mod) {
     mod.static("/fon2/", "web/fon2");
     mod.static("/mesh/", "web/mesh");
     mod.static("/moto/", "web/moto");
-    mod.static("/kiri/", "web/kiri");
+    mod.static("/slicer/", "web/slicer");
+    mod.static("/kiri/", "web/slicer");
 
     // module loader
     function load_modules(root, force) {
@@ -335,8 +338,9 @@ const productionMap = {
 };
 
 const redirList = [
-    "/kiri/",
-    "/mesh/"
+    "/slicer/",
+    "/mesh/",
+    "/kiri/"
 ];
 
 function handleVersion(req, res, next) {
@@ -549,6 +553,7 @@ function cookieValue(cookie,key) {
 
 function rewriteHtmlVersion(req, res, next) {
     if ([
+        "/slicer/",
         "/kiri/",
         "/mesh/",
         "/lib/mesh/work.js",
