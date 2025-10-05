@@ -101,6 +101,7 @@
         "prod": "npm run webpack-ext && npm run webpack-src prod && gs-app-server",
         "prod-pack": "npm run webpack-ext && npm run webpack-src prod",
         "prod-dryrun": "gs-app-server --dryrun",
+        "pages-build": "npm install && node bin/build-pages.mjs --prepare && npm run webpack-ext && npm run webpack-src prod && node bin/build-pages.mjs",
         "start": "npm run prebuild prod && electron .",
         "start-dev": "npm run prebuild prod && electron . --devel",
         "start-dbg": "npm run prebuild && electron . --debugg",

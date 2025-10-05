@@ -1,0 +1,25 @@
+/*
+  Cache-Control: public, max-age=600
+  Permissions-Policy: webgl=(self), unload=(self)
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-site
+  X-Content-Type-Options: nosniff
+
+/kiri/*
+  Cache-Control: public, max-age=600
+
+/mesh/*
+  Cache-Control: public, max-age=600
+
+/moto/*
+  Cache-Control: public, max-age=600
+
+/lib/*
+  Cache-Control: public, max-age=600
+  Access-Control-Allow-Origin: *
+
+/wasm/*
+  Cache-Control: public, max-age=600
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
